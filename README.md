@@ -57,7 +57,7 @@ Sistem Management Absensi berbasis web yang dibangun dengan Laravel untuk mengel
 
 ### Server Requirements
 - PHP 8.1 atau lebih tinggi
-- MySQL 8.0 atau MariaDB 10.4+
+- MySQL 8.0 
 - Web Server (Apache/Nginx)
 - Composer
 - Node.js 16.x atau lebih tinggi
