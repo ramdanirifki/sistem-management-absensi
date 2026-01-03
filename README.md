@@ -8,12 +8,6 @@
 
 Sistem Management Absensi berbasis web yang dibangun dengan Laravel untuk mengelola kehadiran karyawan dengan fitur presensi berbasis lokasi (GPS), jadwal kerja fleksibel, dan pelaporan lengkap.
 
-## 📋 Daftar Isi
-- [Fitur Utama](#-fitur-utama)
-- [Teknologi](#-teknologi)
-- [Persyaratan Sistem](#-persyaratan-sistem)
-- [Instalasi](#-instalasi)
-
 ## ✨ Fitur Utama
 
 ### 🔐 Autentikasi & Keamanan
