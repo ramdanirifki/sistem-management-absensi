@@ -77,7 +77,6 @@ Sistem Management Absensi berbasis web yang dibangun dengan Laravel untuk mengel
 
 ## 🚀 Instalasi
 
-### Langkah 1: Clone Repository
 ```bash
 # Clone repository dari GitHub
 git clone https://github.com/username/sistem-management-absensi.git
