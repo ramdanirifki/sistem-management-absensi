@@ -25,42 +25,33 @@ Sistem Management Absensi berbasis web yang dibangun dengan Laravel untuk mengel
 ### 🔐 Autentikasi & Keamanan
 - Login multi-role (Admin & Karyawan)
 - Proteksi route berdasarkan permission
-- Validasi sesi dan timeout otomatis
 - Enkripsi data sensitif
 
 ### 📍 Presensi Berbasis Lokasi
 - Validasi GPS dengan radius tertentu
 - Deteksi koordinat menggunakan HTML5 Geolocation API
-- Pengaturan multiple lokasi presensi
 - Validasi jarak real-time
 
 ### ⏰ Manajemen Jadwal
-- Jadwal kerja fleksibel per karyawan
 - Pengaturan jam masuk & pulang
 - Toleransi keterlambatan configurable
-- Shift kerja (pagi, siang, malam)
 
 ### 📊 Pelaporan & Analitik
 - Dashboard statistik kehadiran
 - Riwayat absensi per karyawan
 - Laporan bulanan/tahunan
-- Ekspor data ke Excel/PDF
-- Grafik visualisasi data
+- Ekspor data
 
 ### 👥 Manajemen Karyawan
 - CRUD data karyawan lengkap
-- Upload foto profil
 - Riwayat kehadiran individu
-- Notifikasi & reminder
 
 ## 🛠️ Teknologi
 
 ### Backend
-- **Framework:** Laravel 10.x
+- **Framework:** Laravel 12.x
 - **PHP Version:** 8.1+
 - **Database:** MySQL 8.0+
-- **Authentication:** Laravel Sanctum
-- **API:** RESTful API
 
 ### Frontend
 - **CSS Framework:** Tailwind CSS 4.x
@@ -72,7 +63,7 @@ Sistem Management Absensi berbasis web yang dibangun dengan Laravel untuk mengel
 ### Development Tools
 - **Package Manager:** Composer, NPM
 - **Version Control:** Git
-- **Local Server:** Laragon/XAMPP
+- **Local Server:** Laragon
 
 ## 📋 Persyaratan Sistem
 
@@ -84,17 +75,6 @@ Sistem Management Absensi berbasis web yang dibangun dengan Laravel untuk mengel
 - Node.js 16.x atau lebih tinggi
 - NPM 8.x atau lebih tinggi
 
-### PHP Extensions
-- BCMath PHP Extension
-- Ctype PHP Extension
-- Fileinfo PHP Extension
-- JSON PHP Extension
-- Mbstring PHP Extension
-- OpenSSL PHP Extension
-- PDO PHP Extension
-- Tokenizer PHP Extension
-- XML PHP Extension
-
 ## 🚀 Instalasi
 
 ### Langkah 1: Clone Repository
@@ -104,3 +84,26 @@ git clone https://github.com/username/sistem-management-absensi.git
 
 # Masuk ke direktori project
 cd sistem-management-absensi
+
+# Hapus .example pada pada nama file .env.example sehingga menjadi file .env
+
+# Generate Key Aplication
+php artisan key:generate
+
+# Install JavaScript dependencies 
+npm install
+
+# Install PHP dependencies
+composer install
+
+# Jalankan migrasi untuk tabel jadwal absensi
+php artisan migrate --path=database/migrations/2025_12_25_112620_create_jadwal_absensi_table.php
+
+# Jalankan migrasi untuk membuat semua tabel
+php artisan migrate
+
+# Jalankan seed untuk mengisi data pada tabel
+php artisan db:seed
+
+# Jalankan aplikasi
+php artisan serve
