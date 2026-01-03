@@ -13,12 +13,6 @@ Sistem Management Absensi berbasis web yang dibangun dengan Laravel untuk mengel
 - [Teknologi](#-teknologi)
 - [Persyaratan Sistem](#-persyaratan-sistem)
 - [Instalasi](#-instalasi)
-- [Konfigurasi Database](#-konfigurasi-database)
-- [Menjalankan Aplikasi](#-menjalankan-aplikasi)
-- [Struktur Database](#-struktur-database)
-- [Default Login](#-default-login)
-- [Cara Penggunaan](#-cara-penggunaan)
-- [Troubleshooting](#-troubleshooting)
 
 ## ✨ Fitur Utama
 
