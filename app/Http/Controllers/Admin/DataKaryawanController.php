@@ -101,6 +101,7 @@ class DataKaryawanController extends Controller
   {
     $karyawan = User::findOrFail($id);
 
+    // Validasi dasar
     $validated = $request->validate([
       'nik' => 'required|string|max:20|unique:users,nik,' . $id,
       'name' => 'required|string|max:255',
@@ -115,30 +116,32 @@ class DataKaryawanController extends Controller
       'no_telepon' => 'required|string|max:20',
       'tanggal_masuk' => 'required|date',
       'status' => 'required|in:aktif,nonaktif',
-      'password' => 'nullable|string|min:8|confirmed',
     ]);
 
-    // Validasi foto secara terpisah jika ada
+    // Validasi foto terpisah
     if ($request->hasFile('foto')) {
       $request->validate([
         'foto' => 'image|mimes:jpg,jpeg,png|max:2048'
       ]);
+    }
 
+    // Validasi password JIKA DIISI
+    if ($request->filled('password')) {
+      $request->validate([
+        'password' => 'required|string|min:8|confirmed'
+      ]);
+      $validated['password'] = Hash::make($request->password);
+    }
+
+    // Handle foto upload
+    if ($request->hasFile('foto')) {
       // Hapus foto lama jika ada
       if ($karyawan->foto && Storage::disk('public')->exists($karyawan->foto)) {
         Storage::disk('public')->delete($karyawan->foto);
       }
 
-      // Simpan foto baru
       $fotoPath = $request->file('foto')->store('foto-profil', 'public');
       $validated['foto'] = $fotoPath;
-    }
-
-    // Update password jika diisi
-    if ($request->filled('password')) {
-      $validated['password'] = Hash::make($validated['password']);
-    } else {
-      unset($validated['password']);
     }
 
     // SELALU set role sebagai karyawan
