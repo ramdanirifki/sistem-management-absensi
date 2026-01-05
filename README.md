@@ -74,14 +74,14 @@ cd sistem-management-absensi
 
 # Hapus .example pada pada nama file .env.example sehingga menjadi file .env
 
-# Generate Key Aplication
-php artisan key:generate
-
 # Install JavaScript dependencies 
 npm install
 
 # Install PHP dependencies
 composer install
+
+# Generate Key Aplication
+php artisan key:generate
 
 # Jalankan migrasi untuk tabel jadwal absensi
 php artisan migrate --path=database/migrations/2025_12_25_112620_create_jadwal_absensi_table.php
