@@ -42,7 +42,7 @@
           </div>
           <div>
             <label class="block text-sm font-medium text-slate-700 mb-2">Radius (meter) *</label>
-            <input type="number" name="radius_meter" required min="10"
+            <input type="number" name="radius_meter" required min="1"
               class="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
               placeholder="Contoh: 10">
             <p class="mt-1 text-xs text-slate-500">Jarak maksimal dari titik koordinat untuk bisa absen</p>

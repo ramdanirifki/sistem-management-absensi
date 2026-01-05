@@ -24,10 +24,4 @@ class LokasiPresensi extends Model
     'radius_meter' => 'integer',
     'aktif' => 'boolean'
   ];
-
-  // Relasi ke presensi (jika ada)
-  public function presensis()
-  {
-    return $this->hasMany(Presensi::class);
-  }
 }

@@ -14,7 +14,7 @@ return new class extends Migration
             $table->text('alamat');
             $table->decimal('latitude', 10, 8); // -90.00000000 to 90.00000000
             $table->decimal('longitude', 11, 8); // -180.00000000 to 180.00000000
-            $table->integer('radius_meter')->default(10); // Radius dalam meter
+            $table->integer('radius_meter')->default(1); 
             $table->boolean('aktif')->default(true);
             $table->timestamps();
         });
